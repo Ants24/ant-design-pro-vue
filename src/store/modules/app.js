@@ -8,7 +8,8 @@ import {
   DEFAULT_FIXED_HEADER,
   DEFAULT_FIXED_SIDEMENU,
   DEFAULT_FIXED_HEADER_HIDDEN,
-  DEFAULT_CONTENT_WIDTH_TYPE
+  DEFAULT_CONTENT_WIDTH_TYPE,
+  DEFAULT_MULTI_PAGE
 } from '@/store/mutation-types'
 
 const app = {
@@ -22,7 +23,8 @@ const app = {
     fixSiderbar: false,
     autoHideHeader: false,
     color: null,
-    weak: false
+    weak: false,
+    multiPage: false
   },
   mutations: {
     SET_SIDEBAR_TYPE: (state, type) => {
@@ -70,6 +72,10 @@ const app = {
     TOGGLE_WEAK: (state, flag) => {
       Vue.ls.set(DEFAULT_COLOR_WEAK, flag)
       state.weak = flag
+    },
+    TOGGLE_MULTI_PAGE: (state, flag) => {
+      Vue.ls.set(DEFAULT_MULTI_PAGE, flag)
+      state.multiPage = flag
     }
   },
   actions: {
@@ -108,6 +114,9 @@ const app = {
     },
     ToggleWeak({ commit }, weakFlag) {
       commit('TOGGLE_WEAK', weakFlag)
+    },
+    ToggleMultiPage({ commit }, multiFlag) {
+      commit('TOGGLE_MULTI_PAGE', multiFlag)
     }
   }
 }

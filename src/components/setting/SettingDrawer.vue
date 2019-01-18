@@ -135,6 +135,12 @@
                   <div slot="title">色弱模式</div>
                 </a-list-item-meta>
               </a-list-item>
+              <a-list-item>
+                <a-switch slot="actions" size="small" :defaultChecked="multiPage" @change="onMultiPage"/>
+                <a-list-item-meta>
+                  <div slot="title">多标签页</div>
+                </a-list-item-meta>
+              </a-list-item>
             </a-list>
           </div>
         </div>
@@ -212,6 +218,9 @@
         this.$store.dispatch('ToggleWeak', checked)
         updateColorWeak(checked)
       },
+      onMultiPage(checked) {
+        this.$store.dispatch('ToggleMultiPage', checked)
+      },
       handleMenuTheme (theme) {
         this.baseConfig.navTheme = theme
         this.$store.dispatch('ToggleTheme', theme)
@@ -226,6 +235,7 @@
   fixSiderbar: ${this.baseConfig.fixSiderbar}, // sticky siderbar
   autoHideHeader: ${this.baseConfig.autoHideHeader}, //  auto hide header
   colorWeak: ${this.baseConfig.colorWeak},
+  multiPage: ${this.baseConfig.multiPage},
   // vue-ls options
   storageOptions: {
     namespace: 'pro__',

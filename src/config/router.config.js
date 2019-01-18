@@ -254,31 +254,31 @@ export const asyncRouterMap = [
                 path: '/account/settings/base',
                 name: 'BaseSettings',
                 component: () => import('@/views/account/settings/BaseSetting'),
-                meta: { title: '基本设置', hidden: true, keepAlive: true, permission: [ 'user' ]  }
+                meta: { title: '基本设置', hidden: true, keepAlive: true, permission: [ 'user' ],groupId: 'AccountSetting'  }
               },
               {
                 path: '/account/settings/security',
                 name: 'SecuritySettings',
                 component: () => import('@/views/account/settings/Security'),
-                meta: { title: '安全设置', hidden: true, keepAlive: true, permission: [ 'user' ]  }
+                meta: { title: '安全设置', hidden: true, keepAlive: true, permission: [ 'user' ],groupId: 'AccountSetting' }
               },
               {
                 path: '/account/settings/custom',
                 name: 'CustomSettings',
                 component: () => import('@/views/account/settings/Custom'),
-                meta: { title: '个性化设置', hidden: true, keepAlive: true, permission: [ 'user' ]  }
+                meta: { title: '个性化设置', hidden: true, keepAlive: true, permission: [ 'user' ] ,groupId: 'AccountSetting' }
               },
               {
                 path: '/account/settings/binding',
                 name: 'BindingSettings',
                 component: () => import('@/views/account/settings/Binding'),
-                meta: { title: '账户绑定', hidden: true, keepAlive: true, permission: [ 'user' ]  }
+                meta: { title: '账户绑定', hidden: true, keepAlive: true, permission: [ 'user' ] ,groupId: 'AccountSetting' }
               },
               {
                 path: '/account/settings/notification',
                 name: 'NotificationSettings',
                 component: () => import('@/views/account/settings/Notification'),
-                meta: { title: '新消息通知', hidden: true, keepAlive: true, permission: [ 'user' ]  }
+                meta: { title: '新消息通知', hidden: true, keepAlive: true, permission: [ 'user' ],groupId: 'AccountSetting'  }
               },
             ]
           },
