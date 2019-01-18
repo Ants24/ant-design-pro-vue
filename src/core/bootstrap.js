@@ -10,7 +10,8 @@ import {
   DEFAULT_FIXED_HEADER,
   DEFAULT_FIXED_HEADER_HIDDEN,
   DEFAULT_FIXED_SIDEMENU,
-  DEFAULT_CONTENT_WIDTH_TYPE
+  DEFAULT_CONTENT_WIDTH_TYPE,
+  DEFAULT_MULTI_PAGE
 } from '@/store/mutation-types'
 import { removeLoadingAnimate } from '@/utils/util'
 import config from '@/config/defaultSettings'
@@ -26,6 +27,7 @@ export default function Initializer () {
   store.commit('TOGGLE_WEAK', Vue.ls.get(DEFAULT_COLOR_WEAK, config.colorWeak))
   store.commit('TOGGLE_COLOR', Vue.ls.get(DEFAULT_COLOR, config.primaryColor))
   store.commit('SET_TOKEN', Vue.ls.get(ACCESS_TOKEN))
+  store.commit('TOGGLE_MULTI_PAGE', Vue.ls.get(DEFAULT_MULTI_PAGE, config.multiPage))
   // last step
   removeLoadingAnimate('preloadingWrapper', 1500)
 }
